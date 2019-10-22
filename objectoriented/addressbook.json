@@ -1,0 +1,47 @@
+[
+    {
+        "firstName": "abhishek",
+        "lastName": "bhosale",
+        "address": "chembur",
+        "city": "mumbai",
+        "state": "maharashtra",
+        "zip": 787878,
+        "phone": 909090923
+    },
+    {
+        "firstName": "jitendra",
+        "lastName": "bachhav",
+        "address": "420 warje",
+        "city": "pune",
+        "state": "maharashtra",
+        "zip": 23451,
+        "phone": 998877662
+    },
+    {
+        "firstName": "jitendra",
+        "lastName": "patil",
+        "address": "thane120",
+        "city": "thane",
+        "state": "maharashtra",
+        "zip": 1234,
+        "phone": 909090
+    },
+    {
+        "firstName": "rahul",
+        "lastName": "rane",
+        "address": "kothrud",
+        "city": "PUNE",
+        "state": "maha",
+        "zip": 898989,
+        "phone": 909090909
+    },
+    {
+        "firstName": "sachin",
+        "lastName": "tanwar",
+        "address": "surat",
+        "city": "Surat",
+        "state": "gujrat",
+        "zip": 90909,
+        "phone": 909090909
+    }
+]
