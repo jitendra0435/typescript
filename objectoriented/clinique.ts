@@ -6,39 +6,35 @@ var object = JSON.parse(obj);
 var src = require("../Utility/oops/clinique");
 var clinique12 = new src.clinique1();
 var i = 0;
-var operation = /** @class */ (function () {
-    function operation() {
-    }
-    operation.prototype.op = function () {
+
+class operation {
+    op() {
         while (true) {
+
             console.log("Welcome to the clinique managment");
             console.log("Enter your choice");
             console.log("1:Doctors");
             console.log("2:Patients");
             console.log("3:Appointment");
-            console.log("4:Exit");
-            var choice = Utility.inputInt();
+            console.log("4:Exit")
+            let choice: number = Utility.inputInt();
             switch (choice) {
-                case 1:
-                    clinique12.searchdoctor();
+                case 1: clinique12.searchdoctor();
                     break;
-                case 2:
-                    clinique12.searchpatient();
+                case 2: clinique12.searchpatient();
                     break;
-                case 3:
-                    clinique12.appointment();
+                case 3: clinique12.appointment();
                     break;
-                case 4:
-                    false;
-                    return;
+                case 4: 
+                        false;
+                        return;
                 default:
                     console.log("Invalid choice");
-                    break;
-                    ;
+                    break;;
+
             }
         }
-    };
-    return operation;
-}());
+    }
+}
 var ob = new operation();
 ob.op();

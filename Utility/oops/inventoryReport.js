@@ -1,102 +1,115 @@
-inventory = () => {
-    var fs = require('fs');
-    var object = fs.readFileSync("./inventory2.json");
-    var obj = JSON.parse(object);
-    var Utility1 = require("../utility");
-    var readline = Utility1.input();
-    console.log(obj);
-    console.log("inventory example");
-    console.log("enter the options given down");
-    console.log("enter 1 for rice");
-    console.log("enter 2 for wheat");
-    console.log("enter 3 for pulses");
-    let choice = parseInt(readline.question("enter the option "));
-    let validationRule = /^\s{1,}$/;
-    if (choice == undefined || choice == null || isNaN(choice) || validationRule.test(choice) == true) {
-        console.log("Value is undefined");
-        return false;
+"use strict";
+exports.__esModule = true;
+var fs = require('fs');
+var object = fs.readFileSync("./inventory2.json");
+var obj = JSON.parse(object);
+var Utility1 = require("../utility");
+var readline = Utility1.input();
+var inventoryR = /** @class */ (function () {
+    function inventoryR() {
+        this.rice = obj.rice;
+        this.wheat = obj.wheat;
+        this.pulses = obj.pulses;
+        console.log(obj.rice);
+        console.log(obj.wheat);
+        console.log(obj.pulses);
     }
-    switch (choice) {
-        case 1: console.log("||enter the type of rice||");
-            console.log("*enter basmati");
-            console.log("*enter madhur");
-            console.log("*enter gokul");
-            let choice1 = (readline.question("||enter the rice name|| "));
-
-            if (choice1 == undefined || !isNaN(choice1) || validationRule.test(choice1) == true) {
-                console.log("Value is undefined");
-                return false;
-            }
-            for (let i = 0; i < obj.rice.length; i++) {
-                if (obj.rice[i].name == choice1) {
-                    const weight = parseInt(readline.question("||enter the weight of rice in kgs||"));
-                    if (weight == undefined || isNaN(weight) || validationRule.test(weight) == true) {
-                        console.log("Value is undefined");
-                        return false;
-                    }
-                    const totalprice = obj.rice[i].price * weight;
-                    console.log(`totalprice of ${obj.rice[i].name} rice of ${weight} is ${totalprice}`);
+    inventoryR.prototype.inventory = function () {
+        //console.log(obj);
+        console.log("Inventory Report");
+        console.log("choose option from below");
+        console.log("1: Rice");
+        console.log("2: wheat");
+        console.log("3: pulses");
+        var choice = parseInt(readline.question("enter the option "));
+        var validationRule = /^\s{1,}$/;
+        if (choice == undefined || choice == null || isNaN(choice) || validationRule.test('choice') == true) {
+            console.log("Value is undefined");
+            return false;
+        }
+        switch (choice) {
+            case 1:
+                console.log("enter the type of rice");
+                console.log("basmati");
+                console.log("madhur");
+                console.log("gokul");
+                var choice1 = (readline.question("enter the rice name"));
+                if (choice1 == undefined || validationRule.test(choice1) == true) {
+                    console.log("Value is undefined");
+                    return false;
                 }
-            }
-            break;
-
-        case 2: console.log("enter the type of wheat");
-            console.log("||enter any options||");
-            console.log("*enter  gold");
-            console.log("*enter  silvercoin");
-            console.log("*enter  brownwheat");
-            let choice2 = readline.question("||enter the wheat name||");
-            if (choice2 == undefined || !isNaN(choice2) || validationRule.test(choice2) == true) {
-                console.log("Value is undefined");
-                return false;
-            }
-            for (let i = 0; i < obj.wheat.length; i++) {
-                if (obj.wheat[i].name == choice2) {
-                    const weight = parseInt(readline.question("||enter the weight of wheat in kgs||"));
-                    if (weight == undefined || isNaN(weight) || validationRule.test(weight) == true) {
-                        console.log("Value is undefined");
-                        return false;
+                for (var i = 0; i < obj.rice.length; i++) {
+                    if (obj.rice[i].name == choice1) {
+                        var weight = parseInt(readline.question("enter the weight of rice in kgs"));
+                        if (weight == undefined || isNaN(weight) || validationRule.test('weight') == true) {
+                            console.log("Value is undefined");
+                            return false;
+                        }
+                        var totalprice = obj.rice[i].price * weight;
+                        console.log("totalprice of " + obj.rice[i].name + " rice of " + weight + " is " + totalprice);
+                        console.log("Do you want continue shopping press y if not press n");
+                        var ans = readline.question();
+                        if (ans == 'y') {
+                            this.inventory();
+                        }
                     }
-                    const totalprice = obj.wheat[i].price * weight;
-                    console.log(`totalprice of ${obj.wheat[i].name} wheat of ${weight}is ${totalprice}`);
                 }
-            }
-            break;
-
-
-        case 3: console.log("enter the type of pulses");
-            console.log("enter any options");
-            console.log("enter  dal");
-            console.log("enter lentils");
-            console.log("enter  peas");
-            let choice3 = readline.question("||enter the type of pulse ||");
-            if (choice3 == undefined || !isNaN(choice3) || validationRule.test(choice3) == true) {
-                console.log("Value is undefined");
-                return false;
-            }
-            for (let i = 0; i < obj.pulses.length; i++) {
-                if (obj.pulses[i].name == choice3) {
-                    const weight = parseInt(readline.question("||enter the weight of pulses in kgs||"));
-                    if (weight == undefined || isNaN(weight) || validationRule.test(weight) == true) {
-                        console.log("Value is undefined");
-                        return false;
+                break;
+            case 2:
+                console.log("enter the type of wheat");
+                console.log("enter any options");
+                console.log("gold");
+                console.log("silvercoin");
+                console.log("brownwheat");
+                var choice2 = readline.question("||enter the wheat name||");
+                if (choice2 == undefined || !isNaN(choice2) || validationRule.test('choice2') == true) {
+                    console.log("Value is undefined");
+                    return false;
+                }
+                for (var i = 0; i < obj.wheat.length; i++) {
+                    if (obj.wheat[i].name == choice2) {
+                        var weight = parseInt(readline.question("enter the weight of wheat in kgs"));
+                        if (weight == undefined || isNaN(weight) || validationRule.test('weight') == true) {
+                            console.log("Value is undefined");
+                            return false;
+                        }
+                        var totalprice = obj.wheat[i].price * weight;
+                        console.log("totalprice of " + obj.wheat[i].name + " wheat of " + weight + "is " + totalprice);
                     }
-                    const totalprice = obj.rice[i].price * weight;
-                    console.log(`totalprice of ${obj.pulses[i].name} pulses of ${weight} is ${totalprice}`);
                 }
-            }
-            break;
-
-        default:
-            console.log("wrong input");
-            return;
-
-
-    }
-
-}
+                break;
+            case 3:
+                console.log("enter the type of pulses");
+                console.log("enter any options");
+                console.log("enter  dal");
+                console.log("enter lentils");
+                console.log("enter  peas");
+                var choice3 = readline.question("enter the type of pulse ");
+                if (choice3 == undefined || !isNaN(choice3) || validationRule.test('choice3') == true) {
+                    console.log("Value is undefined");
+                    return false;
+                }
+                for (var i = 0; i < obj.pulses.length; i++) {
+                    if (obj.pulses[i].name == choice3) {
+                        var weight = parseInt(readline.question("enter the weight of pulses in kgs"));
+                        if (weight == undefined || isNaN(weight) || validationRule.test('weight') == true) {
+                            console.log("Value is undefined");
+                            return false;
+                        }
+                        var totalprice = obj.rice[i].price * weight;
+                        console.log("totalprice of " + obj.pulses[i].name + " pulses of " + weight + " is " + totalprice);
+                    }
+                }
+                break;
+            default:
+                console.log("wrong input");
+                return;
+        }
+    };
+    return inventoryR;
+}());
+var in1 = new inventoryR();
+in1.inventory();
 module.exports = {
-    inventory
-
-
-}
+    inventoryR: inventoryR
+};

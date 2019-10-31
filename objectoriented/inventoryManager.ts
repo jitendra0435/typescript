@@ -1,3 +1,4 @@
-var src = require("../Utility/oops/inventoryClass");
+
+let src=require("../Utility/oops/inventoryClass");
 var iinventory = new src.Inventory();
 iinventory.inventory1();

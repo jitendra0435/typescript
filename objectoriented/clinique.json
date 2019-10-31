@@ -1,10 +1,10 @@
 {
-    "doctor":[{"doctor_name":"vishal","id":1,"specialization":"homeopath","Availability":"AM"},
-               {"doctor_name":"lalit","id":2,"specialization":"ayurvedic","Availability":"AM"},
-               {"doctor_name":"rohit","id":3,"specialization":"diabetician","Availability":"PM"}],
+    "doctor":[{"doctor_name":"rahul","id":1,"specialization":"homeopath","Availability":"AM"},
+               {"doctor_name":"abhijeet","id":2,"specialization":"ayurvedic","Availability":"AM"},
+               {"doctor_name":"vedant","id":3,"specialization":"diabetician","Availability":"PM"}],
 
-    "Patient":[{"patient_name":"detox","id":1,"mobile_number":"9876543210"},
-                {"patient_name":"sonia","id":2,"mobile_number":"9000000000"},
-                {"patient_name":"rahul","id":3,"mobile_number":"9876588880"}]
+    "Patient":[{"patient_name":"sunny","id":1,"mobile_number":"9876543210"},
+                {"patient_name":"vicky","id":2,"mobile_number":"9000000000"},
+                {"patient_name":"john","id":3,"mobile_number":"9876588880"}]
 
 }
