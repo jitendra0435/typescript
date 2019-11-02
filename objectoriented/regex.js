@@ -1,27 +1,8 @@
 
-/********************************************************************************************
-*Execution    :  default node     cmd> node regex.js.
-*
-*Purpose      :  to understand regular expression
-*
-*@description  
-*
-*@file        : regex.js.
-*@overview    : regex module to replace a value and test an regular expression on it.
-                 
-*@author	 :  Vishal Vasam <vasamvishal12@gmail.com>
-*@version     :  1.0
-*********************************************************************************************/
-/** 
- * @description  variable is declared to use to acquire Utility class
- * @var {input} Utility
- */
+
+ 
 var Utility = require("../Utility/utility");
 
-/** 
- * @description  variable is declared to use to acquire input function
- * @const {input} readline
- */
 var readline=Utility.input();
 //regex function
 regex = () => {

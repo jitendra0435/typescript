@@ -1,5 +1,5 @@
 
-
+export{}
 var Utility = require("../Utility/utility");
 var src = require("../Utility/oops/stockManager");
 var i = 0;

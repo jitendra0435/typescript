@@ -1,4 +1,4 @@
-
+export{}
 const Utility = require("../../Utility/utility")
 const readline = Utility.input();
 var fs = require('fs');
